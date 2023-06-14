@@ -1,0 +1,26 @@
+#main{
+    background-color: whitesmoke;
+    width: 80%;
+    text-align: center;
+    border-radius: 20px;
+  }
+  
+  p{
+    font-size: 20px;
+  }
+
+  .mbtiDescription {
+    background-color: whitesmoke;
+    width: 80%;
+    text-align: center;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .mbtiBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }

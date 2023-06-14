@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="PandaCoding">
+  <meta name="keywords" content="MBTI 유형">
+  <meta name="description" content="MBTI 유형">
+
+  <!-- sns share -->
+  <meta property="og:url" content="https://MBTIanimal.netlify.app" />
+  <meta property="og:title" content="MBTI 유형" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/share.png" />
+  <meta property="og:description" content="MBTI 유형" />
+
+  <!--favicon-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="img/favicon.ico" />
+
+  <title>MBTI 유형</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/qna.css">
+  <link rel="stylesheet" href="./css/animation.css">
+  <link rel="stylesheet" href="./css/result.css">
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <!-- <script>
+    Kakao.init(JavaScript Key);
+    Kakao.isInitialized();
+  </script> -->
+</head>
+
+<body>
+  <div class="container">
+    <section id="main" class="mx-auto my-5 py-5 px-3">
+      <h1>MBTI 유형</h1>
+      <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+        <img src="./img/main2.png" alt="mainImage" class="img-fluid">
+      </div>
+      <p>
+        6월 나의 운세를 찾아라 <br>
+        아래 시작하기 버튼을 눌러 시작해 주십시오.
+      </p>
+      <button type="button" class="btn btn-outline-danger mt-3" onclick="js:showMBTIButtons()">시작하기</button>
+    </section>
+    <section id="mbti" style="display: none;">
+      <div class="status mx-auto mt-5">
+        <div class="statusBar"></div>
+      </div>
+      <div class="qBox my-5 py-3 mx-auto"></div>
+      <div class="answerBox"></div>
+      <div class="mbtiBox my-5 py-3 mx-auto">
+        <h2>MBTI 유형</h2>
+        <div class="row row-cols-2 row-cols-md-4 gy-3">
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="ISTJ" onclick="js:showMBTIDescription('ISTJ')">ISTJ</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="ISFJ" onclick="js:showMBTIDescription('ISFJ')">ISFJ</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="INFJ" onclick="js:showMBTIDescription('INFJ')">INFJ</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="INTJ" onclick="js:showMBTIDescription('INTJ')">INTJ</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="ISTP" onclick="js:showMBTIDescription('ISTP')">ISTP</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="ISFP" onclick="js:showMBTIDescription('ISFP')">ISFP</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="INFP" onclick="js:showMBTIDescription('INFP')">INFP</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="INTP" onclick="js:showMBTIDescription('INTP')">INTP</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="ESTP" onclick="js:showMBTIDescription('ESTP')">ESTP</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="ESFP" onclick="js:showMBTIDescription('ESFP')">ESFP</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="ENFP" onclick="js:showMBTIDescription('ENFP')">ENFP</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="ENTP" onclick="js:showMBTIDescription('ENTP')">ENTP</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="ESTJ" onclick="js:showMBTIDescription('ESTJ')">ESTJ</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="ESFJ" onclick="js:showMBTIDescription('ESFJ')">ESFJ</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="ENFJ" onclick="js:showMBTIDescription('ENFJ')">ENFJ</button>
+          </div>
+          <div class="col mb-3">
+            <button type="button" class="btn btn-primary btn-lg mbtiButton" data-mbti="ENTJ" onclick="js:showMBTIDescription('ENTJ')">ENTJ</button>
+          </div>
+          <!-- 나머지 MBTI 유형도 동일하게 추가 -->
+        </div>
+      </div>
+      <div id="resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+        <img src="" alt="Result Image" class="img-fluid">
+      </div>
+      <div class="mbtiDescription mt-5" style="display: none;">
+        <h3 class="mbtiTitle"></h3>
+        <p class="mbtiContent"></p>
+      </div>
+    </section>
+    <!-- MBTI 유형에 대한 이미지 표시 -->
+    
+
+
+    <script src="./js/data.js" charset="utf-8"></script>
+
+  </div>
+
+  <script>
+    function showMBTIButtons() {
+      document.getElementById("main").style.display = "none";
+      document.getElementById("mbti").style.display = "block";
+    }
+
+    const mbtiButtons = document.getElementsByClassName("mbtiButton");
+    for (let i = 0; i < mbtiButtons.length; i++) {
+      mbtiButtons[i].addEventListener("click", function () {
+        const mbti = this.getAttribute("data-mbti");
+        showMBTIDescription(mbti);
+      });
+    }
+
+    function showMBTIDescription(mbti) {
+  const mbtiTitleElement = document.querySelector(".mbtiTitle");
+  const mbtiContentElement = document.querySelector(".mbtiContent");
+  const resultImgElement = document.getElementById("resultImg");
+  
+  // Find the MBTI information from the infolist array
+  const mbtiInfo = infolist.find(info => info.type === mbti.toUpperCase());
+
+  if (mbtiInfo) {
+    // Set the MBTI title and content
+    mbtiTitleElement.textContent = mbtiInfo.title;
+    mbtiContentElement.textContent = mbtiInfo.description;
+
+    // Show the MBTI description
+    const mbtiDescriptionElement = document.querySelector(".mbtiDescription");
+    mbtiDescriptionElement.style.display = "block";
+
+    // Set the result image
+    resultImgElement.querySelector("img").src = mbtiInfo.image;
+    resultImgElement.style.display = "block";
+  } else {
+    // Clear the MBTI title and content
+    mbtiTitleElement.textContent = "";
+    mbtiContentElement.textContent = "";
+
+    // Hide the MBTI description
+    const mbtiDescriptionElement = document.querySelector(".mbtiDescription");
+    mbtiDescriptionElement.style.display = "none";
+
+    // Hide the result image
+    resultImgElement.style.display = "none";
+
+    alert('MBTI type not found!');
+  }
+
+  // Fade out the MBTI buttons
+  const mbtiButtonsElement = document.querySelector(".mbtiBox");
+  mbtiButtonsElement.style.opacity = 0;
+  mbtiButtonsElement.style.pointerEvents = "none";
+}
+
+
+// Hide the result image initially
+const resultImgElement = document.getElementById("resultImg");
+resultImgElement.style.display = "none";
+
+  </script>
+</body>
+
+</html>
