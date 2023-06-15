@@ -21,7 +21,7 @@ const infolist = [
       type: "ISTJ",
       title: "ISTJ - 청렴결백한 논리주의자",
       description: "ISTJ는 매사에 철저하고 신중한 성향을 가진 사람들을 말합니다. 논리적이고 현실적이며, 일을 체계적으로 처리하는 경향이 있습니다. 또한, 신뢰성과 충실성을 중요시하여 주변 사람들에게 안정감을 줍니다.",
-      image: "./img/image01.png", // ISTJ 이미지 경로 설정
+      image: "./img/image01.png", 
       comments: [
         { type: "쥐", comment: "심기를 안정시키고 기다리는 것이 상책이라 하겠다." },
         { type: "소", comment: " 동업이나 가까운 사람의 유혹을 조심하라." },

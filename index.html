@@ -9,7 +9,7 @@
   <meta name="description" content="MBTI 유형">
 
   <!-- sns share -->
-  <meta property="og:url" content="https://MBTIanimal.netlify.app" />
+  <meta property="og:url" content="https://clinquant-phoenix-fe8474.netlify.app" />
   <meta property="og:title" content="MBTI 유형" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="img/share.png" />
@@ -30,10 +30,17 @@
   <link rel="stylesheet" href="./css/animation.css">
   <link rel="stylesheet" href="./css/result.css">
   <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-  <!-- <script>
-    Kakao.init(JavaScript Key);
+  <script type="module">
+    import KAKAO_KEY from './js/key.js';
+  
+    Kakao.init(KAKAO_KEY);
     Kakao.isInitialized();
-  </script> -->
+  </script>
+  
+  <script src="./js/data.js" charset="utf-8"></script>
+  <script src="./js/share.js" charset="utf-8"></script>
+  <script src="./js/index.js" charset="utf-8"></script>
+
 </head>
 
 <body>
@@ -134,13 +141,10 @@
       </div>
       <div id="mbti-info"></div>
       <div id="table"></div>
+      <button type="button" id="kakao" class="kakao mt-3 py-2 px-3" onclick="js:setShare()">공유하기</button>
     </section>
     <!-- MBTI 유형에 대한 이미지 표시 -->
-
-
-
-    <script src="./js/data.js" charset="utf-8"></script>
-    <script src="./js/index.js" charset="utf-8"></script>
+    
   </div>
 
   <script>
@@ -148,7 +152,7 @@
       document.getElementById("main").style.display = "none";
       document.getElementById("mbti").style.display = "block";
       document.getElementById("table").style.display = "none"; // Add this line
-
+      document.getElementById("kakao").style.display = "none";
       // Hide the table
     }
 
@@ -165,7 +169,7 @@
       const mbtiContentElement = document.querySelector(".mbtiContent");
       const resultImgElement = document.getElementById("resultImg");
       document.getElementById("table").style.display = "block"; // Add this line
-
+      document.getElementById("kakao").style.display = "block";
       // 표 생성
       const tableElement = document.getElementById("table");
       tableElement.innerHTML = ""; // 기존의 내용을 초기화합니다.
@@ -250,6 +254,12 @@
     // Hide the result image initially
     const resultImgElement = document.getElementById("resultImg");
     resultImgElement.style.display = "none";
+
+    function goBack() {
+    document.getElementById('mbti').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+  }
+
   </script>
 </body>
 
