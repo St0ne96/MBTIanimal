@@ -1,28 +1,36 @@
 function setShare() {
-    const mbtiTitle = document.querySelector('.mbtiTitle').textContent;
-    const mbtiContent = document.querySelector('.mbtiContent').textContent;
-    const shareURL = 'https://clinquant-phoenix-fe8474.netlify.app'; // 공유할 URL을 여기에 입력하세요
-    const shareImage = 'img/share.png'; // 공유할 이미지 경로를 여기에 입력하세요
-  
-    Kakao.Link.sendDefault({
-      objectType: 'feed',
-      content: {
-        title: mbtiTitle,
-        description: mbtiContent,
-        imageUrl: shareImage,
+  // 공유할 URL
+  const shareUrl = "https://clinquant-phoenix-fe8474.netlify.app";
+
+  // 공유할 이미지 URL
+  const shareImage = "img/share.png";
+
+  // 공유할 제목
+  const shareTitle = "MBTI 유형";
+
+  // 공유할 설명
+  const shareDescription = "MBTI 유형";
+
+  // 카카오링크 생성
+  Kakao.Link.sendDefault({
+    objectType: "feed",
+    content: {
+      title: shareTitle,
+      description: shareDescription,
+      imageUrl: shareImage,
+      link: {
+        webUrl: shareUrl,
+        mobileWebUrl: shareUrl
+      }
+    },
+    buttons: [
+      {
+        title: "웹에서 보기",
         link: {
-          mobileWebUrl: shareURL,
-          webUrl: shareURL,
-        },
-      },
-      buttons: [
-        {
-          title: '웹으로 보기',
-          link: {
-            mobileWebUrl: shareURL,
-            webUrl: shareURL,
-          },
-        },
-      ],
-    });
-  }
+          webUrl: shareUrl,
+          mobileWebUrl: shareUrl
+        }
+      }
+    ]
+  });
+}
