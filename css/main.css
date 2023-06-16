@@ -40,3 +40,10 @@
   th {
     background-color: #f2f2f2;
   }
+
+  .kakao {
+    font-size: 20px; /* 버튼의 글꼴 크기를 조정합니다. */
+    padding: 10px 20px; /* 버튼의 내부 여백을 조정합니다. */
+    display: block; /* 버튼을 블록 요소로 변경합니다. */
+    margin: 0 auto; /* 가운데 정렬을 설정합니다. */
+  }
