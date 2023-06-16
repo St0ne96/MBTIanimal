@@ -13,5 +13,5 @@ site : https://clinquant-phoenix-fe8474.netlify.app/
 - 현재 6월 운세로만 고정이 되어있는데 챗GPT를 통해서 매일 운세가 바뀔 수 있도록 바꿀 예정
 
 ### last release 
-2023.06.15 kakao api를 통한 sns 공유버튼 미완성 
-2023.06.16 kakao api를 통한 sns 공유버튼 완료 및 배포 
+- 2023.06.15 kakao api를 통한 sns 공유버튼 미완성 
+- 2023.06.16 kakao api를 통한 sns 공유버튼 완료 및 배포 
