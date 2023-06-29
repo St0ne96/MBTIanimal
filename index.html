@@ -138,8 +138,11 @@
       </div>
       <div id="mbti-info"></div>
       <div id="table"></div>
-      <button type="button" id="kakao" class="kakao mt-3 py-2 px-3" onclick="js:setShare()">친구에게 공유하기</button>
-    <!-- MBTI 유형에 대한 이미지 표시 -->
+      <div class="button-container">
+        <button type="button" id="kakao" class="kakao mt-3 py-2 px-3" onclick="js:setShare()">친구에게 공유하기</button>
+        <button type="button" id="refresh" class="refresh mt-3 py-2 px-3" onclick="refreshPage()">처음으로</button>
+      </div>
+      <!-- MBTI 유형에 대한 이미지 표시 -->
     
   </div>
 
@@ -149,6 +152,7 @@
       document.getElementById("mbti").style.display = "block";
       document.getElementById("table").style.display = "none"; // Add this line
       document.getElementById("kakao").style.display = "none";
+      document.getElementById("refresh").style.display = "none";
       // Hide the table
     }
 
@@ -166,6 +170,7 @@
       const resultImgElement = document.getElementById("resultImg");
       document.getElementById("table").style.display = "block"; // Add this line
       document.getElementById("kakao").style.display = "block";
+      document.getElementById("refresh").style.display = "block";
       // 표 생성
       const tableElement = document.getElementById("table");
       tableElement.innerHTML = ""; // 기존의 내용을 초기화합니다.
@@ -245,7 +250,7 @@
       tableElement.appendChild(commentsTable);
 
     }
-
+    
 
     // Hide the result image initially
     const resultImgElement = document.getElementById("resultImg");
@@ -255,8 +260,11 @@
     document.getElementById('mbti').style.display = 'none';
     document.getElementById('main').style.display = 'block';
   }
+
+  function refreshPage() {
+  location.reload();
+}
   
   </script>
 </body>
 </html>  
-
