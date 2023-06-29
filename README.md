@@ -14,4 +14,5 @@ site : https://clinquant-phoenix-fe8474.netlify.app/
 
 ### last release 
 - 2023.06.15 kakao api를 통한 sns 공유버튼 미완성 
-- 2023.06.16 kakao api를 통한 sns 공유버튼 완료 및 배포 
+- 2023.06.16 kakao api를 통한 sns 공유버튼 완료 및 배포
+- 2023.06.29 처음으로 버튼 추가 
