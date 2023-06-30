@@ -29,7 +29,12 @@
   <link rel="stylesheet" href="./css/animation.css">
   <link rel="stylesheet" href="./css/result.css">
   <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-  <script src="./js/key.js"></script>
+  <script src="key.js"></script>
+  <script>
+    var kakaoKey = getKakaoKey();
+    Kakao.init(kakaoKey);
+    Kakao.isInitialized();
+  </script>
   
   <script src="./js/data.js" charset="utf-8"></script>
   <script src="./js/share.js" charset="utf-8"></script>
